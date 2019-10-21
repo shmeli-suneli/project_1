@@ -1,0 +1,209 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+@keyframes glance{
+	from {
+		align-self: center;
+	}
+	to{
+       align-self: flex-end;
+	}
+}
+
+
+body{
+	background-color: rgba(102,153,102,1);
+	background-attachment: fixed;
+}
+.preface{
+	display: flex;
+	justify-content: space-between;
+}
+.leftGrad{
+	width: 10rem;
+	height: 8rem;
+	background-image: linear-gradient(-45deg,cornsilk,moccasin);
+}
+.rightGrad{
+	width: 10rem;
+	height: 8rem;
+	background-image: linear-gradient(45deg,cornsilk,moccasin);
+ }
+ .L, .R{
+ 	display: block;
+ 	padding: 1rem;
+ 	text-align: center;
+ 	opacity: 0.1;
+ }
+ a:hover{
+ 	cursor: pointer;
+ 	color:navy;
+ 	opacity: 1;
+ }
+  
+.center{
+	width: calc( 100% - 20rem );
+	height: 8rem;
+	margin:0 2em 0 2em;
+	flex-basis: 80vw;
+	background-color: midnightblue;	
+	box-sizing: border-box;
+}
+.eyesContainer{
+	height: 4rem;
+	display:flex;
+	justify-content: center;
+}
+.eyes{
+	width: 3rem;
+	height: 3rem;
+	border: 1px solid white;
+	border-radius: 50%;
+	background: white;
+	display: inline-block;
+	margin-top: 0.5rem;	
+	display:flex;
+}
+.pupil{
+	width: 1rem;
+	height: 1rem;
+	border: 1px solid black;
+	border-radius: 50%;
+	background: black;
+	align-self: center;
+	animation: glance 0.5s 0.1s infinite alternate;
+	/*animation-play-state: paused;*/
+ }
+
+form{
+	display: flex;
+	justify-content: center;
+}
+ input[name="booksrch"]{
+ 	width: 80%;
+ 	margin-left: 5%;
+ 	padding: 0.8rem;
+ 	outline: none;
+ 	background-color:inherit;
+ 	border-right: none;
+ 	border-left: none;
+ 	border-top: none;
+ 	border-bottom: 2px solid white;
+ 	font-size: 125%;
+ 	color: white;
+ }
+ 
+ input[name="send"]{
+ 	position:relative;
+ 	outline: none;
+ 	width: 2.5rem;
+ 	height: 2.5rem;
+ 	background-image: url(../img/magnifying-glass.png);
+ 	background-size: contain;
+ 	background-repeat: no-repeat;
+ 	top:0.7rem;
+ }
+
+.turnover{
+	background-image: radial-gradient(burlywood,white);
+	font-family: 'Libre Baskerville', serif;
+	display: grid;
+	grid-template-columns:repeat(4,1fr);
+	grid-template-rows: 2fr 2fr auto;
+	width: 90%;
+	margin: 2rem auto;
+	padding: 1rem;
+	grid-gap: 1rem;
+	grid-template-areas: 
+	"pic about A B"
+	". about C D";
+	
+
+}
+
+img[ alt="author"]{
+	width:100%;
+	height:2fr;
+	border-radius: 50%;
+}
+
+.pic{
+	grid-area: pic;
+		
+}
+.about{
+	grid-area: about;
+	
+}
+.bookImgA{
+	grid-area: A;
+	place-self:center;
+}
+
+.bookImgB{
+	grid-area: B;
+	place-self:center;
+}
+
+.bookImgC{
+	grid-area: C;
+	place-self:center;
+}
+
+.bookImgD{
+	grid-area: D;
+	place-self:center;
+}
+.bookImgA:hover,.bookImgB:hover,.bookImgC:hover,.bookImgD:hover{
+	transform: scale(1.1);
+	cursor: pointer;
+ }
+.copyright{
+	height: 8rem;
+	background-color:midnightblue;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: oldlace;
+	font-family: 'Libre Baskerville', serif;
+}
+.ARR{
+	font-size: 1.2rem;
+}
+ ul a{
+   	font-size: 1.2rem;
+   	text-decoration: none;
+   	color: oldlace;
+ }
+input[type="email"],input[type="submit"]{
+   	font-size: 1.2rem;
+ }
+
+
+@media screen and (max-width:1000px) {
+	.turnover{
+	display: grid;
+	grid-template-columns:repeat(2,1fr);
+	grid-template-rows: 2fr;
+	width: 90%;
+	margin: 2rem auto;
+	padding: 1rem;
+	grid-gap: 1rem;
+	grid-template-areas: 
+	"pic about"
+	"A B"
+	"C D";}
+	.copyright{
+		display: flex;
+		flex-direction: column;
+	}
+}
+@media screen and (max-width:540px){
+	.turnover{
+		display: flex;
+		flex-direction: column;
+	}
+	.copyright{
+		display: flex;
+		flex-direction: column;
+	}
+}
